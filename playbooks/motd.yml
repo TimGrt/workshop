@@ -1,7 +1,7 @@
 ---
 
 - name: Playbook for configuring MOTD
-  hosts: all
+  hosts: nxos
   gather_facts: false
   roles:
-    - motd
+    - banner
