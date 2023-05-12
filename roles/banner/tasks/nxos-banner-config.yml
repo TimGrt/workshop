@@ -1,6 +1,6 @@
 ---
 
-- name: configure the motd banner
+- name: Configure the motd banner
   cisco.nxos.nxos_banner:
     banner: motd
     text: |
@@ -8,4 +8,3 @@
       that contains a multiline
       string
     state: present
-
