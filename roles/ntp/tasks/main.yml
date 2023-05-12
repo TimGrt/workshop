@@ -1,0 +1,9 @@
+---
+
+- name: Execute NTP config on IOS systems
+  ansible.builtin.import_tasks: ios-ntp-config.yml
+  when: ansible_facts.net_system == 'ios'
+
+- name: Execute NTP config on NXOS systems
+  ansible.builtin.import_tasks: nxos-ntp-config.yml
+  when: ansible_facts.net_system == 'nxos'
