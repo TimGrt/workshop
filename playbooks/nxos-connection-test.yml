@@ -4,7 +4,7 @@
   hosts: nxos
   gather_facts: false
   tasks:
-    - name: NTP server config       
+    - name: NTP server config
       cisco.nxos.nxos_facts:
       register: output
 
