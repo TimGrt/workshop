@@ -1,0 +1,5 @@
+---
+
+- name: Execute banner config on NXOS systems
+  ansible.builtin.import_tasks: nxos-banner-config.yml
+  when: ansible_network_os == 'nxos'
