@@ -1,0 +1,7 @@
+- name: Apply the provided configuration
+  cisco.ios.ios_ntp_global:
+    config:
+     servers:
+        - server: 172.16.1.12
+    source: GigabitEthernet1
+    state: merged
