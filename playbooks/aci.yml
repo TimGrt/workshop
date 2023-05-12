@@ -9,18 +9,18 @@
         host: "{{ ansible_host }}"
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
-        validate_certs: no
+        validate_certs: false
         name: NTP_Pol
         admin_state: enabled
         state: present
+
     - name: Update NTP Server on APIC
       cisco.aci.aci_ntp_server:
         host: "{{ ansible_host }}"
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
-        validate_certs: no
+        validate_certs: false
         ntp_policy: NTP_Pol
         ntp_server: "{{ primary_ntp_server }}"
-        preferred: yes
+        preferred: true
         state: present
-      

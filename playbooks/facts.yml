@@ -1,0 +1,12 @@
+---
+
+- name: Gather facts playbook
+  hosts: all
+  tasks:
+    - name: Get facts of NXOS systems
+      cisco.nxos.nxos_facts:
+      when: ansible_network_os == 'nxos'
+
+    - name: Get facts of IOS systems
+      cisco.nxos.nxos_facts:
+      when: ansible_network_os == 'ios'
