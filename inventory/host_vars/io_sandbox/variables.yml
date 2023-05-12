@@ -1,8 +1,0 @@
----
-
-ansible_connection: network_cli
-
-ansible_network_os: ios
-ansible_user: developer
-#ssh_args: -oKexAlgorithms=+diffie-hellman-group-exchange-sha1 -oHostKeyAlgorithms=ssh-rsa -c aes192-ctr
-
