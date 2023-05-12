@@ -2,8 +2,17 @@
 
 - name: Execute NTP config on IOS systems
   ansible.builtin.import_tasks: ios-ntp-config.yml
-  when: ansible_facts.net_system == 'ios'
+  when:
+    - ansible_network_os is defined
+    - ansible_network_os == 'ios'
 
 - name: Execute NTP config on NXOS systems
   ansible.builtin.import_tasks: nxos-ntp-config.yml
-  when: ansible_facts.net_system == 'nxos'
+  when:
+    - ansible_network_os is defined
+    - ansible_network_os == 'nxos'
+
+- name: Execute NTP config on NXOS systems
+  ansible.builtin.import_tasks: aci-ntp-config.yml
+  when:
+    - '"aci" in group_names'

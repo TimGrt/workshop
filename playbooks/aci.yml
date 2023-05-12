@@ -1,0 +1,7 @@
+---
+
+- name: Playbook Name
+  hosts: aci
+  gather_facts: false
+  roles:
+    - ntp

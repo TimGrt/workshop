@@ -1,0 +1,11 @@
+---
+
+- name: IOS default configuration Playbook
+  hosts: ios
+  gather_facts: false
+  tasks:
+    - name: Disable IP domain lookup
+      cisco.ios.ios_config:
+        lines: "no ip domain-lookup"
+        diff_against: startup
+        save_when: changed

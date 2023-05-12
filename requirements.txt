@@ -1,0 +1,3 @@
+ansible-pylibssh
+netaddr
+paramiko

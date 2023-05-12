@@ -1,0 +1,10 @@
+---
+
+- name: Configure the motd banner
+  cisco.nxos.nxos_banner:
+    banner: motd
+    text: |
+      this is my motd banner
+      that contains a multiline
+      string
+    state: present
