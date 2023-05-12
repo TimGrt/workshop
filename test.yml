@@ -1,0 +1,22 @@
+---
+
+- name: NXOS connection test
+  hosts: nxos
+  gather_facts: false
+  tasks:
+    - name: NTP server config
+      cisco.nxos.nxos_facts:
+      register: output
+
+    - name: Output facts gathered with previous tasks
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+
+    # - name: NTP server config
+    #   cisco.nxos.nxos_ntp_global:
+    #     config:
+    #       servers:
+    #         - server: 198.51.100.6
+    #           key_id: 1
+    #           vrf: default
+    #     state: replaced
