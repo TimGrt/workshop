@@ -1,0 +1,20 @@
+- name: IOS-XE connection test
+  hosts: ios-xe
+  gather_facts: false
+  tasks:
+    - name: Gather IOS-XE facts
+      cisco.ios.ios_facts:
+      register: output
+
+    - name: Apply SNMP configuration (IOS)
+      cisco.ios.ios_snmp_server:
+        config:
+          groups:
+          - group: "{{ SNMPV3_GRP_READ }}"
+            version: v3
+            version_option: priv
+            read: "{{ SNMPV3_R_VIEW_NAME }}"
+          - group: "{{ SNMPV3_GRP_WRITE }}"
+            version: v3
+            version_option: priv
+            write: "{{ SNMPV3_W_VIEW_NAME }}"
