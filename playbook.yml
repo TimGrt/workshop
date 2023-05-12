@@ -1,0 +1,3 @@
+---
+
+- import_playbooks: playbooks/motd.yml
