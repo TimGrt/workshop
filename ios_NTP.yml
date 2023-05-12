@@ -1,0 +1,14 @@
+---
+
+- name: OS connection test
+  hosts: ios
+  gather_facts: false
+  tasks:
+    - name: NTP server config
+      cisco.ios.ios:
+      register: output
+
+    - name: Output facts gathered with previous tasks
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+        
