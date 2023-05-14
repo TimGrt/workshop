@@ -8,11 +8,13 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: no-commit-to-branch
+        args: ['--branch', 'dev']
       - id: requirements-txt-fixer
   - repo: https://github.com/timgrt/pre-commit-hooks
     rev: v0.2.1
     hooks:
       - id: check-file-names
+        exclude: ^\.|README|Makefile.*$
       - id: check-vault-files
   - repo: https://github.com/ansible-community/ansible-lint
     rev: v6.16.0
