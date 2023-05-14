@@ -1,0 +1,25 @@
+---
+repos:
+  - repo: local
+    hooks:
+      - id: check-merge-conflict
+        name: Check for merge conflict markers
+        entry: hooks/check_merge_conflict.py
+        language: script
+      - id: no-commit-to-branch
+        name: Check for commits to protected branch
+        entry: hooks/no_commit_to_branch.py
+        args: ['dev']
+        language: script
+        pass_filenames: false
+      - id: check-vault-files
+        name: Check for unencrypted Vault files
+        entry: hooks/check_vault_files.py
+        language: script
+        types: [file]
+        files: '^.*vault.*$'
+      - id: ansible-lint
+        name: Run ansible-lint best practice checker
+        entry: /usr/bin/python3 -m ansiblelint --force-color
+        language: python
+        pass_filenames: true
