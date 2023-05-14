@@ -1,6 +1,0 @@
----
-
-SNMPV3_GRP_READ: read_string_test
-SNMPV3_R_VIEW_NAME: read_view_test
-SNMPV3_GRP_WRITE: write_string_test
-SNMPV3_W_VIEW_NAME: write_view_test
