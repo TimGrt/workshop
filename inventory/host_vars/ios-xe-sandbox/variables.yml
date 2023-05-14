@@ -1,0 +1,6 @@
+---
+
+snmpv3_grp_read: read_string_test
+snmpv3_r_view_name: read_view_test
+snmpv3_group_write: write_string_test
+snmpv3_w_view_name: write_view_test
